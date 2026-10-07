@@ -1,6 +1,6 @@
 [package]
 name = "vortexstudio-mcp"
-version = "1.0.0"
+version = "1.1.0"
 edition = "2024"
 rust-version = "1.89"
 description = "MCP server for Vortex Studio: read and edit .vrtx projects, Vortex Luau API reference and linter"
@@ -14,14 +14,25 @@ categories = ["development-tools", "game-development"]
 strip = true
 lto = true
 
+[features]
+default = ["server"]
+# the MCP server and its binary. Turn it off to use only the format, scene,
+# lint and API modules as a library, like VortexSync does
+server = ["dep:rmcp", "dep:tokio", "dep:anyhow"]
+
+[[bin]]
+name = "vortexstudio-mcp"
+path = "src/main.rs"
+required-features = ["server"]
+
 [dependencies]
-anyhow = "1.0.104"
+anyhow = { version = "1.0.104", optional = true }
 full_moon = { version = "3.0.0", default-features = false, features = ["luau", "serde"] }
-rmcp = { version = "3.5.1", features = ["server", "transport-io", "macros"] }
+rmcp = { version = "3.5.1", features = ["server", "transport-io", "macros"], optional = true }
 schemars = "1.2.2"
 serde = { version = "1.0.229", features = ["derive"] }
 serde_json = "1.0.151"
-tokio = { version = "1.53.2", features = ["macros", "rt-multi-thread", "io-std"] }
+tokio = { version = "1.53.2", features = ["macros", "rt-multi-thread", "io-std"], optional = true }
 zstd = "0.14.0"
 
 [dev-dependencies]

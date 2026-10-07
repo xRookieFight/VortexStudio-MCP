@@ -83,6 +83,16 @@ The tools warn when they see Studio running.
 
 The file format is documented in [docs/FORMAT.md](docs/FORMAT.md).
 
+## Using it as a library
+
+The format, scene, lint and API modules work without the MCP server. Turn off the default feature to skip its dependencies:
+
+```toml
+vortexstudio-mcp = { git = "https://github.com/xRookieFight/VortexStudio-MCP", tag = "v1.1.0", default-features = false }
+```
+
+[VortexSync](https://github.com/xRookieFight/VortexSync) uses it this way.
+
 ## Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md). Sample `.vrtx` files that use lights, values, body movers or attributes are the most useful contribution right now.

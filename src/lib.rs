@@ -5,6 +5,7 @@ pub mod api;
 pub mod check;
 pub mod lint;
 pub mod scene;
+#[cfg(feature = "server")]
 pub mod server;
 pub mod store;
 pub mod sync;
