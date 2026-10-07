@@ -77,7 +77,7 @@ The tools warn when they see Studio running.
 
 ## Limits
 
-* Creating PointLight, SpotLight, Folder, IntValue, StringValue and the body movers isn't supported yet, because no real file using them has been seen and guessing their layout could produce projects Studio rejects. Parts can still get point and spot lights through `set_properties`. Existing projects that contain those classes are read and saved without losing anything.
+* Creating PointLight, SpotLight, Folder, IntValue, StringValue and the body movers isn't supported yet, because no real file using them has been seen and guessing their layout could produce projects Studio rejects. Parts can still get lights through `set_properties`: point lights are checked in Studio, spot lights follow the same layout but haven't been. Existing projects that contain those classes are read and saved without losing anything.
 * The API reference marks entries that come from Roblox conventions rather than Vortex's bindings as `unverified`.
 * Publishing isn't supported.
 
