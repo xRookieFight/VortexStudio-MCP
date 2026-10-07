@@ -1,0 +1,1777 @@
+{
+  "about": {
+    "engine": "Vortex client 0.6.3, Vortex Studio 0.6.1",
+    "language": "Luau",
+    "notes": "Collected from the Lua bindings and editor autocomplete shipped in the Vortex binaries plus scripts from published community projects. Vortex mirrors a subset of the Roblox API. Anything missing here should be assumed missing in Vortex too, even if Roblox has it.",
+    "unverified": "Entries flagged unverified are inferred from Roblox conventions or editor labels rather than seen in Vortex's script bindings. Test them before relying on them."
+  },
+  "globals": [
+    {
+      "name": "game",
+      "kind": "property",
+      "type": "DataModel",
+      "description": "Root of the place. Use game:GetService(name) to reach services."
+    },
+    {
+      "name": "workspace",
+      "kind": "property",
+      "type": "Workspace",
+      "description": "Shortcut for game:GetService(\"Workspace\")."
+    },
+    {
+      "name": "script",
+      "kind": "property",
+      "type": "LuaSourceContainer",
+      "description": "The script instance the code is running in."
+    },
+    {
+      "name": "Enum",
+      "kind": "property",
+      "type": "Enums",
+      "description": "Access enums, e.g. Enum.Material.Wood or Enum.KeyCode.Space."
+    },
+    {
+      "name": "print",
+      "kind": "function",
+      "signature": "print(...: any)",
+      "description": "Writes to the Output panel."
+    },
+    {
+      "name": "warn",
+      "kind": "function",
+      "signature": "warn(...: any)",
+      "description": "Writes a warning to the Output panel."
+    },
+    {
+      "name": "error",
+      "kind": "function",
+      "signature": "error(message: any, level: number?)"
+    },
+    {
+      "name": "assert",
+      "kind": "function",
+      "signature": "assert(value: any, message: string?)"
+    },
+    {
+      "name": "pcall",
+      "kind": "function",
+      "signature": "pcall(f: function, ...: any): (boolean, ...any)"
+    },
+    {
+      "name": "xpcall",
+      "kind": "function",
+      "signature": "xpcall(f: function, handler: function, ...: any): (boolean, ...any)"
+    },
+    {
+      "name": "require",
+      "kind": "function",
+      "signature": "require(module: ModuleScript): any",
+      "description": "Runs a ModuleScript once and returns what it returned."
+    },
+    {
+      "name": "type",
+      "kind": "function",
+      "signature": "type(value: any): string"
+    },
+    {
+      "name": "typeof",
+      "kind": "function",
+      "signature": "typeof(value: any): string",
+      "description": "Like type but knows Vortex datatypes such as Vector3 and Instance."
+    },
+    {
+      "name": "tostring",
+      "kind": "function",
+      "signature": "tostring(value: any): string"
+    },
+    {
+      "name": "tonumber",
+      "kind": "function",
+      "signature": "tonumber(value: any, base: number?): number?"
+    },
+    {
+      "name": "pairs",
+      "kind": "function",
+      "signature": "pairs(t: table)"
+    },
+    {
+      "name": "ipairs",
+      "kind": "function",
+      "signature": "ipairs(t: table)"
+    },
+    {
+      "name": "next",
+      "kind": "function",
+      "signature": "next(t: table, key: any?)"
+    },
+    {
+      "name": "select",
+      "kind": "function",
+      "signature": "select(index: number | \"#\", ...: any)"
+    },
+    {
+      "name": "rawequal",
+      "kind": "function",
+      "signature": "rawequal(a: any, b: any): boolean"
+    },
+    {
+      "name": "rawget",
+      "kind": "function",
+      "signature": "rawget(t: table, key: any): any"
+    },
+    {
+      "name": "rawset",
+      "kind": "function",
+      "signature": "rawset(t: table, key: any, value: any)"
+    },
+    {
+      "name": "rawlen",
+      "kind": "function",
+      "signature": "rawlen(t: table | string): number"
+    },
+    {
+      "name": "setmetatable",
+      "kind": "function",
+      "signature": "setmetatable(t: table, mt: table?): table"
+    },
+    {
+      "name": "getmetatable",
+      "kind": "function",
+      "signature": "getmetatable(t: any): table?"
+    },
+    {
+      "name": "unpack",
+      "kind": "function",
+      "signature": "unpack(t: table, i: number?, j: number?)"
+    },
+    {
+      "name": "wait",
+      "kind": "function",
+      "signature": "wait(seconds: number?): number",
+      "description": "Old style yield. Prefer task.wait.",
+      "deprecated": true
+    }
+  ],
+  "libraries": {
+    "string": [
+      "byte",
+      "char",
+      "find",
+      "format",
+      "gmatch",
+      "gsub",
+      "len",
+      "lower",
+      "match",
+      "rep",
+      "reverse",
+      "sub",
+      "upper",
+      "split",
+      "pack",
+      "packsize",
+      "unpack"
+    ],
+    "table": [
+      "concat",
+      "foreach",
+      "foreachi",
+      "getn",
+      "maxn",
+      "insert",
+      "remove",
+      "sort",
+      "move",
+      "create",
+      "clear",
+      "freeze",
+      "isfrozen",
+      "clone"
+    ],
+    "math": [
+      "abs",
+      "acos",
+      "asin",
+      "atan2",
+      "atan",
+      "ceil",
+      "cosh",
+      "cos",
+      "deg",
+      "exp",
+      "floor",
+      "fmod",
+      "frexp",
+      "ldexp",
+      "log10",
+      "log",
+      "max",
+      "min",
+      "modf",
+      "pow",
+      "rad",
+      "random",
+      "randomseed",
+      "sinh",
+      "sin",
+      "sqrt",
+      "tanh",
+      "tan",
+      "noise",
+      "clamp",
+      "sign",
+      "round",
+      "map",
+      "lerp",
+      "pi",
+      "huge"
+    ],
+    "coroutine": [
+      "create",
+      "resume",
+      "running",
+      "status",
+      "wrap",
+      "yield",
+      "isyieldable",
+      "close"
+    ],
+    "task": [
+      "wait",
+      "spawn",
+      "delay",
+      "defer"
+    ]
+  },
+  "services": [
+    {
+      "name": "Workspace",
+      "description": "Holds everything that exists in the 3D world. Also reachable through the workspace global.",
+      "members": [
+        {
+          "name": "CurrentCamera",
+          "kind": "property",
+          "type": "Camera",
+          "side": "client",
+          "description": "The local camera. Its CFrame tells you where the player is looking."
+        },
+        {
+          "name": "Raycast",
+          "kind": "method",
+          "signature": "Workspace:Raycast(origin: Vector3, direction: Vector3, params: RaycastParams?): RaycastResult?",
+          "description": "Casts a ray and returns the first hit, or nil."
+        },
+        {
+          "name": "Spherecast",
+          "kind": "method",
+          "signature": "Workspace:Spherecast(origin: Vector3, radius: number, direction: Vector3, params: RaycastParams?): RaycastResult?"
+        },
+        {
+          "name": "Blockcast",
+          "kind": "method",
+          "signature": "Workspace:Blockcast(cframe: CFrame, size: Vector3, direction: Vector3, params: RaycastParams?): RaycastResult?"
+        }
+      ]
+    },
+    {
+      "name": "Players",
+      "description": "Tracks connected players.",
+      "members": [
+        {
+          "name": "LocalPlayer",
+          "kind": "property",
+          "type": "Player",
+          "side": "client",
+          "description": "The player running this LocalScript. nil on the server."
+        },
+        {
+          "name": "GetPlayers",
+          "kind": "method",
+          "signature": "Players:GetPlayers(): {Player}"
+        },
+        {
+          "name": "GetPlayerByUserId",
+          "kind": "method",
+          "signature": "Players:GetPlayerByUserId(userId: number): Player?"
+        },
+        {
+          "name": "GetPlayerFromCharacter",
+          "kind": "method",
+          "signature": "Players:GetPlayerFromCharacter(character: Model): Player?"
+        },
+        {
+          "name": "PlayerAdded",
+          "kind": "event",
+          "signature": "Players.PlayerAdded(player: Player)"
+        },
+        {
+          "name": "PlayerRemoving",
+          "kind": "event",
+          "signature": "Players.PlayerRemoving(player: Player)"
+        }
+      ]
+    },
+    {
+      "name": "RunService",
+      "description": "Frame events and environment checks.",
+      "members": [
+        {
+          "name": "Heartbeat",
+          "kind": "event",
+          "signature": "RunService.Heartbeat(deltaTime: number)",
+          "description": "Fires every frame after physics."
+        },
+        {
+          "name": "Stepped",
+          "kind": "event",
+          "signature": "RunService.Stepped(time: number, deltaTime: number)",
+          "description": "Fires every frame before physics."
+        },
+        {
+          "name": "RenderStepped",
+          "kind": "event",
+          "signature": "RunService.RenderStepped(deltaTime: number)",
+          "side": "client",
+          "description": "Fires every frame before rendering. Client only."
+        },
+        {
+          "name": "IsServer",
+          "kind": "method",
+          "signature": "RunService:IsServer(): boolean"
+        },
+        {
+          "name": "IsClient",
+          "kind": "method",
+          "signature": "RunService:IsClient(): boolean"
+        },
+        {
+          "name": "IsStudio",
+          "kind": "method",
+          "signature": "RunService:IsStudio(): boolean"
+        }
+      ]
+    },
+    {
+      "name": "UserInputService",
+      "description": "Keyboard, mouse, touch and gamepad input. Client only.",
+      "side": "client",
+      "members": [
+        {
+          "name": "TouchEnabled",
+          "kind": "property",
+          "type": "boolean"
+        },
+        {
+          "name": "KeyboardEnabled",
+          "kind": "property",
+          "type": "boolean"
+        },
+        {
+          "name": "MouseEnabled",
+          "kind": "property",
+          "type": "boolean"
+        },
+        {
+          "name": "GamepadEnabled",
+          "kind": "property",
+          "type": "boolean"
+        },
+        {
+          "name": "InputBegan",
+          "kind": "event",
+          "signature": "UserInputService.InputBegan(input: InputObject, gameProcessed: boolean)"
+        },
+        {
+          "name": "InputEnded",
+          "kind": "event",
+          "signature": "UserInputService.InputEnded(input: InputObject, gameProcessed: boolean)"
+        },
+        {
+          "name": "IsKeyDown",
+          "kind": "method",
+          "signature": "UserInputService:IsKeyDown(key: Enum.KeyCode): boolean"
+        }
+      ]
+    },
+    {
+      "name": "TweenService",
+      "description": "Smoothly animates properties.",
+      "members": [
+        {
+          "name": "Create",
+          "kind": "method",
+          "signature": "TweenService:Create(instance: Instance, info: TweenInfo, goals: {[string]: any}): Tween",
+          "description": "Goals is a table of property names to target values. Call :Play() on the result."
+        }
+      ]
+    },
+    {
+      "name": "Debris",
+      "description": "Destroys instances after a delay without yielding.",
+      "members": [
+        {
+          "name": "AddItem",
+          "kind": "method",
+          "signature": "Debris:AddItem(instance: Instance, lifetime: number?)"
+        },
+        {
+          "name": "SetMaxItems",
+          "kind": "method",
+          "signature": "Debris:SetMaxItems(count: number)"
+        }
+      ]
+    },
+    {
+      "name": "ReplicatedStorage",
+      "description": "Shared container both server and clients can see. Put ModuleScripts and RemoteEvents here.",
+      "members": []
+    },
+    {
+      "name": "ServerScriptService",
+      "description": "Server only container. Scripts placed here run on the server.",
+      "members": []
+    },
+    {
+      "name": "StarterPlayerScripts",
+      "description": "LocalScripts placed here run on every player's client.",
+      "members": []
+    },
+    {
+      "name": "Lighting",
+      "description": "Ambient light and sun settings. Edit them in Studio's properties or with the set_lighting tool.",
+      "members": []
+    }
+  ],
+  "classes": [
+    {
+      "name": "Instance",
+      "abstract": true,
+      "description": "Base of every object in the tree.",
+      "members": [
+        {
+          "name": "Name",
+          "kind": "property",
+          "type": "string"
+        },
+        {
+          "name": "ClassName",
+          "kind": "property",
+          "type": "string",
+          "readonly": true
+        },
+        {
+          "name": "Parent",
+          "kind": "property",
+          "type": "Instance?"
+        },
+        {
+          "name": "Clone",
+          "kind": "method",
+          "signature": "Instance:Clone(): Instance"
+        },
+        {
+          "name": "Destroy",
+          "kind": "method",
+          "signature": "Instance:Destroy()"
+        },
+        {
+          "name": "FindFirstChild",
+          "kind": "method",
+          "signature": "Instance:FindFirstChild(name: string): Instance?"
+        },
+        {
+          "name": "FindFirstChildOfClass",
+          "kind": "method",
+          "signature": "Instance:FindFirstChildOfClass(className: string): Instance?"
+        },
+        {
+          "name": "WaitForChild",
+          "kind": "method",
+          "signature": "Instance:WaitForChild(name: string, timeout: number?): Instance?",
+          "description": "Yields in 0.05 s steps until the child exists. Returns nil once the timeout passes."
+        },
+        {
+          "name": "GetChildren",
+          "kind": "method",
+          "signature": "Instance:GetChildren(): {Instance}"
+        },
+        {
+          "name": "GetDescendants",
+          "kind": "method",
+          "signature": "Instance:GetDescendants(): {Instance}"
+        },
+        {
+          "name": "GetAttribute",
+          "kind": "method",
+          "signature": "Instance:GetAttribute(name: string): any"
+        },
+        {
+          "name": "SetAttribute",
+          "kind": "method",
+          "signature": "Instance:SetAttribute(name: string, value: nil | boolean | number | string)",
+          "description": "Only nil, boolean, number and string values are accepted from scripts."
+        },
+        {
+          "name": "GetAttributes",
+          "kind": "method",
+          "signature": "Instance:GetAttributes(): {[string]: any}"
+        },
+        {
+          "name": "GetAttributeChangedSignal",
+          "kind": "method",
+          "signature": "Instance:GetAttributeChangedSignal(name: string): RBXScriptSignal"
+        },
+        {
+          "name": "GetPropertyChangedSignal",
+          "kind": "method",
+          "signature": "Instance:GetPropertyChangedSignal(property: string): RBXScriptSignal"
+        },
+        {
+          "name": "Changed",
+          "kind": "event",
+          "signature": "Instance.Changed(property: string)"
+        }
+      ]
+    },
+    {
+      "name": "Part",
+      "inherits": "Instance",
+      "creatable": true,
+      "description": "A physical block, wedge, corner wedge, cylinder or ball. Trusses, spawn locations and the baseplate are Parts with special flags.",
+      "members": [
+        {
+          "name": "Position",
+          "kind": "property",
+          "type": "Vector3"
+        },
+        {
+          "name": "Orientation",
+          "kind": "property",
+          "type": "Vector3",
+          "description": "Rotation in degrees."
+        },
+        {
+          "name": "Rotation",
+          "kind": "property",
+          "type": "Vector3"
+        },
+        {
+          "name": "CFrame",
+          "kind": "property",
+          "type": "CFrame"
+        },
+        {
+          "name": "Size",
+          "kind": "property",
+          "type": "Vector3"
+        },
+        {
+          "name": "Color",
+          "kind": "property",
+          "type": "Color3"
+        },
+        {
+          "name": "Transparency",
+          "kind": "property",
+          "type": "number",
+          "description": "0 is opaque, 1 is invisible."
+        },
+        {
+          "name": "Material",
+          "kind": "property",
+          "type": "Enum.Material"
+        },
+        {
+          "name": "Anchored",
+          "kind": "property",
+          "type": "boolean"
+        },
+        {
+          "name": "CanCollide",
+          "kind": "property",
+          "type": "boolean"
+        },
+        {
+          "name": "CastShadow",
+          "kind": "property",
+          "type": "boolean"
+        },
+        {
+          "name": "Velocity",
+          "kind": "property",
+          "type": "Vector3"
+        },
+        {
+          "name": "AngularVelocity",
+          "kind": "property",
+          "type": "Vector3"
+        },
+        {
+          "name": "AssemblyLinearVelocity",
+          "kind": "property",
+          "type": "Vector3"
+        },
+        {
+          "name": "AssemblyAngularVelocity",
+          "kind": "property",
+          "type": "Vector3"
+        },
+        {
+          "name": "RotVelocity",
+          "kind": "property",
+          "type": "Vector3"
+        },
+        {
+          "name": "Mass",
+          "kind": "property",
+          "type": "number",
+          "readonly": true
+        },
+        {
+          "name": "CenterOfMass",
+          "kind": "property",
+          "type": "Vector3",
+          "readonly": true
+        },
+        {
+          "name": "Touched",
+          "kind": "event",
+          "signature": "Part.Touched(other: Part)"
+        },
+        {
+          "name": "TouchEnded",
+          "kind": "event",
+          "signature": "Part.TouchEnded(other: Part)"
+        }
+      ]
+    },
+    {
+      "name": "Model",
+      "inherits": "Instance",
+      "creatable": true,
+      "description": "Groups parts so they can be moved together. Characters are Models.",
+      "members": [
+        {
+          "name": "PivotTo",
+          "kind": "method",
+          "signature": "Model:PivotTo(cframe: CFrame)"
+        },
+        {
+          "name": "GetPivot",
+          "kind": "method",
+          "signature": "Model:GetPivot(): CFrame"
+        },
+        {
+          "name": "MoveTo",
+          "kind": "method",
+          "signature": "Model:MoveTo(position: Vector3)"
+        }
+      ]
+    },
+    {
+      "name": "Folder",
+      "inherits": "Instance",
+      "creatable": true,
+      "description": "Plain container for organizing instances.",
+      "members": []
+    },
+    {
+      "name": "Script",
+      "inherits": "Instance",
+      "creatable": true,
+      "description": "Runs on the server. Put it in ServerScriptService or Workspace.",
+      "members": [
+        {
+          "name": "Enabled",
+          "kind": "property",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "name": "LocalScript",
+      "inherits": "Instance",
+      "creatable": true,
+      "description": "Runs on each player's client. Put it in StarterPlayerScripts.",
+      "members": [
+        {
+          "name": "Enabled",
+          "kind": "property",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "name": "ModuleScript",
+      "inherits": "Instance",
+      "creatable": true,
+      "description": "Code shared through require(). Usually lives in ReplicatedStorage.",
+      "members": []
+    },
+    {
+      "name": "RemoteEvent",
+      "inherits": "Instance",
+      "creatable": true,
+      "description": "One way messages between server and clients. Arguments may be numbers, strings, booleans, nil, Vector3, Color3 and tables of those. Instances and CFrames can't be sent yet.",
+      "members": [
+        {
+          "name": "FireServer",
+          "kind": "method",
+          "side": "client",
+          "signature": "RemoteEvent:FireServer(...: any)"
+        },
+        {
+          "name": "FireClient",
+          "kind": "method",
+          "side": "server",
+          "signature": "RemoteEvent:FireClient(player: Player, ...: any)"
+        },
+        {
+          "name": "FireAllClients",
+          "kind": "method",
+          "side": "server",
+          "signature": "RemoteEvent:FireAllClients(...: any)"
+        },
+        {
+          "name": "OnServerEvent",
+          "kind": "event",
+          "side": "server",
+          "signature": "RemoteEvent.OnServerEvent(player: Player, ...: any)"
+        },
+        {
+          "name": "OnClientEvent",
+          "kind": "event",
+          "side": "client",
+          "signature": "RemoteEvent.OnClientEvent(...: any)"
+        }
+      ]
+    },
+    {
+      "name": "RemoteFunction",
+      "inherits": "Instance",
+      "creatable": true,
+      "description": "Request and response between server and clients. Same argument rules as RemoteEvent.",
+      "members": [
+        {
+          "name": "InvokeServer",
+          "kind": "method",
+          "side": "client",
+          "signature": "RemoteFunction:InvokeServer(...: any): ...any"
+        },
+        {
+          "name": "InvokeClient",
+          "kind": "method",
+          "side": "server",
+          "signature": "RemoteFunction:InvokeClient(player: Player, ...: any): ...any",
+          "unverified": true
+        },
+        {
+          "name": "OnServerInvoke",
+          "kind": "callback",
+          "side": "server",
+          "signature": "RemoteFunction.OnServerInvoke = function(player: Player, ...: any): ...any"
+        },
+        {
+          "name": "OnClientInvoke",
+          "kind": "callback",
+          "side": "client",
+          "signature": "RemoteFunction.OnClientInvoke = function(...: any): ...any"
+        }
+      ]
+    },
+    {
+      "name": "BindableEvent",
+      "inherits": "Instance",
+      "creatable": true,
+      "description": "Messages between scripts on the same side.",
+      "members": [
+        {
+          "name": "Fire",
+          "kind": "method",
+          "signature": "BindableEvent:Fire(...: any)"
+        },
+        {
+          "name": "Event",
+          "kind": "event",
+          "signature": "BindableEvent.Event(...: any)"
+        }
+      ]
+    },
+    {
+      "name": "BindableFunction",
+      "inherits": "Instance",
+      "creatable": true,
+      "description": "Calls between scripts on the same side.",
+      "members": [
+        {
+          "name": "Invoke",
+          "kind": "method",
+          "signature": "BindableFunction:Invoke(...: any): ...any"
+        },
+        {
+          "name": "OnInvoke",
+          "kind": "callback",
+          "signature": "BindableFunction.OnInvoke = function(...: any): ...any"
+        }
+      ]
+    },
+    {
+      "name": "IntValue",
+      "inherits": "Instance",
+      "creatable": true,
+      "studio_only_file_support": true,
+      "description": "Holds an integer.",
+      "members": [
+        {
+          "name": "Value",
+          "kind": "property",
+          "type": "number"
+        },
+        {
+          "name": "Changed",
+          "kind": "event",
+          "signature": "IntValue.Changed(value: number)",
+          "unverified": true
+        }
+      ]
+    },
+    {
+      "name": "StringValue",
+      "inherits": "Instance",
+      "creatable": true,
+      "studio_only_file_support": true,
+      "description": "Holds a string.",
+      "members": [
+        {
+          "name": "Value",
+          "kind": "property",
+          "type": "string"
+        },
+        {
+          "name": "Changed",
+          "kind": "event",
+          "signature": "StringValue.Changed(value: string)",
+          "unverified": true
+        }
+      ]
+    },
+    {
+      "name": "PointLight",
+      "inherits": "Instance",
+      "creatable": true,
+      "description": "Light that shines in every direction from its parent part.",
+      "members": [
+        {
+          "name": "Color",
+          "kind": "property",
+          "type": "Color3",
+          "unverified": true
+        },
+        {
+          "name": "Brightness",
+          "kind": "property",
+          "type": "number",
+          "unverified": true
+        },
+        {
+          "name": "Range",
+          "kind": "property",
+          "type": "number",
+          "unverified": true
+        }
+      ]
+    },
+    {
+      "name": "SpotLight",
+      "inherits": "Instance",
+      "creatable": true,
+      "description": "Cone of light from one face of its parent part.",
+      "members": [
+        {
+          "name": "Color",
+          "kind": "property",
+          "type": "Color3",
+          "unverified": true
+        },
+        {
+          "name": "Brightness",
+          "kind": "property",
+          "type": "number",
+          "unverified": true
+        },
+        {
+          "name": "Range",
+          "kind": "property",
+          "type": "number",
+          "unverified": true
+        },
+        {
+          "name": "Angle",
+          "kind": "property",
+          "type": "number",
+          "unverified": true
+        },
+        {
+          "name": "Face",
+          "kind": "property",
+          "type": "Enum.NormalId",
+          "unverified": true
+        }
+      ]
+    },
+    {
+      "name": "BodyVelocity",
+      "inherits": "Instance",
+      "creatable": true,
+      "description": "Pushes its parent part towards a velocity.",
+      "members": [
+        {
+          "name": "Velocity",
+          "kind": "property",
+          "type": "Vector3",
+          "unverified": true
+        },
+        {
+          "name": "MaxForce",
+          "kind": "property",
+          "type": "Vector3"
+        },
+        {
+          "name": "P",
+          "kind": "property",
+          "type": "number"
+        }
+      ]
+    },
+    {
+      "name": "BodyPosition",
+      "inherits": "Instance",
+      "creatable": true,
+      "description": "Pulls its parent part towards a position.",
+      "members": [
+        {
+          "name": "Position",
+          "kind": "property",
+          "type": "Vector3",
+          "unverified": true
+        },
+        {
+          "name": "MaxForce",
+          "kind": "property",
+          "type": "Vector3"
+        },
+        {
+          "name": "P",
+          "kind": "property",
+          "type": "number"
+        },
+        {
+          "name": "D",
+          "kind": "property",
+          "type": "number"
+        }
+      ]
+    },
+    {
+      "name": "BodyAngularVelocity",
+      "inherits": "Instance",
+      "creatable": true,
+      "description": "Spins its parent part.",
+      "members": [
+        {
+          "name": "AngularVelocity",
+          "kind": "property",
+          "type": "Vector3",
+          "unverified": true
+        },
+        {
+          "name": "MaxTorque",
+          "kind": "property",
+          "type": "Vector3"
+        },
+        {
+          "name": "P",
+          "kind": "property",
+          "type": "number"
+        }
+      ]
+    },
+    {
+      "name": "VectorForce",
+      "inherits": "Instance",
+      "creatable": true,
+      "description": "Applies a constant force.",
+      "members": [
+        {
+          "name": "Force",
+          "kind": "property",
+          "type": "Vector3"
+        }
+      ]
+    },
+    {
+      "name": "Torque",
+      "inherits": "Instance",
+      "creatable": true,
+      "description": "Applies a constant torque.",
+      "members": [
+        {
+          "name": "Torque",
+          "kind": "property",
+          "type": "Vector3"
+        }
+      ]
+    },
+    {
+      "name": "Player",
+      "inherits": "Instance",
+      "description": "A connected player.",
+      "members": [
+        {
+          "name": "DisplayName",
+          "kind": "property",
+          "type": "string"
+        },
+        {
+          "name": "UserId",
+          "kind": "property",
+          "type": "number"
+        },
+        {
+          "name": "Character",
+          "kind": "property",
+          "type": "Model?"
+        },
+        {
+          "name": "CharacterAdded",
+          "kind": "event",
+          "signature": "Player.CharacterAdded(character: Model)"
+        },
+        {
+          "name": "CharacterRemoving",
+          "kind": "event",
+          "signature": "Player.CharacterRemoving(character: Model)"
+        }
+      ]
+    },
+    {
+      "name": "Humanoid",
+      "inherits": "Instance",
+      "description": "Controls a character. Find it with character:FindFirstChild(\"Humanoid\"). The root part is character.HumanoidRootPart.",
+      "members": [
+        {
+          "name": "Health",
+          "kind": "property",
+          "type": "number"
+        },
+        {
+          "name": "MaxHealth",
+          "kind": "property",
+          "type": "number"
+        },
+        {
+          "name": "WalkSpeed",
+          "kind": "property",
+          "type": "number"
+        },
+        {
+          "name": "JumpPower",
+          "kind": "property",
+          "type": "number"
+        },
+        {
+          "name": "JumpHeight",
+          "kind": "property",
+          "type": "number"
+        },
+        {
+          "name": "HipHeight",
+          "kind": "property",
+          "type": "number"
+        },
+        {
+          "name": "AutoRotate",
+          "kind": "property",
+          "type": "boolean"
+        },
+        {
+          "name": "MoveDirection",
+          "kind": "property",
+          "type": "Vector3",
+          "readonly": true
+        },
+        {
+          "name": "GetState",
+          "kind": "method",
+          "signature": "Humanoid:GetState(): Enum.HumanoidStateType"
+        },
+        {
+          "name": "TakeDamage",
+          "kind": "method",
+          "signature": "Humanoid:TakeDamage(amount: number)"
+        },
+        {
+          "name": "Died",
+          "kind": "event",
+          "signature": "Humanoid.Died()"
+        },
+        {
+          "name": "HealthChanged",
+          "kind": "event",
+          "signature": "Humanoid.HealthChanged(health: number)"
+        },
+        {
+          "name": "StateChanged",
+          "kind": "event",
+          "signature": "Humanoid.StateChanged(old: Enum.HumanoidStateType, new: Enum.HumanoidStateType)"
+        },
+        {
+          "name": "Running",
+          "kind": "event",
+          "signature": "Humanoid.Running(speed: number)"
+        },
+        {
+          "name": "Jumping",
+          "kind": "event",
+          "signature": "Humanoid.Jumping(active: boolean)"
+        },
+        {
+          "name": "FreeFalling",
+          "kind": "event",
+          "signature": "Humanoid.FreeFalling(active: boolean)"
+        }
+      ]
+    },
+    {
+      "name": "Tween",
+      "description": "Returned by TweenService:Create.",
+      "members": [
+        {
+          "name": "Play",
+          "kind": "method",
+          "signature": "Tween:Play()"
+        },
+        {
+          "name": "Pause",
+          "kind": "method",
+          "signature": "Tween:Pause()"
+        },
+        {
+          "name": "Cancel",
+          "kind": "method",
+          "signature": "Tween:Cancel()"
+        },
+        {
+          "name": "PlaybackState",
+          "kind": "property",
+          "type": "Enum.PlaybackState"
+        },
+        {
+          "name": "Completed",
+          "kind": "event",
+          "signature": "Tween.Completed(state: Enum.PlaybackState)"
+        }
+      ]
+    },
+    {
+      "name": "RaycastResult",
+      "description": "What Raycast, Spherecast and Blockcast return on a hit.",
+      "members": [
+        {
+          "name": "Instance",
+          "kind": "property",
+          "type": "Part"
+        },
+        {
+          "name": "Position",
+          "kind": "property",
+          "type": "Vector3"
+        },
+        {
+          "name": "Normal",
+          "kind": "property",
+          "type": "Vector3"
+        },
+        {
+          "name": "Distance",
+          "kind": "property",
+          "type": "number"
+        }
+      ]
+    },
+    {
+      "name": "InputObject",
+      "description": "Passed to UserInputService events.",
+      "members": [
+        {
+          "name": "UserInputType",
+          "kind": "property",
+          "type": "Enum.UserInputType"
+        },
+        {
+          "name": "KeyCode",
+          "kind": "property",
+          "type": "Enum.KeyCode"
+        },
+        {
+          "name": "Position",
+          "kind": "property",
+          "type": "Vector3",
+          "unverified": true
+        },
+        {
+          "name": "Delta",
+          "kind": "property",
+          "type": "Vector3"
+        }
+      ]
+    },
+    {
+      "name": "RBXScriptSignal",
+      "description": "Any event. Connect returns a connection you can Disconnect.",
+      "members": [
+        {
+          "name": "Connect",
+          "kind": "method",
+          "signature": "Signal:Connect(handler: function): RBXScriptConnection",
+          "description": "There's a per signal connection limit, disconnect handlers you no longer need."
+        },
+        {
+          "name": "Wait",
+          "kind": "method",
+          "signature": "Signal:Wait(): ...any",
+          "unverified": true
+        }
+      ]
+    },
+    {
+      "name": "RBXScriptConnection",
+      "members": [
+        {
+          "name": "Connected",
+          "kind": "property",
+          "type": "boolean"
+        },
+        {
+          "name": "Disconnect",
+          "kind": "method",
+          "signature": "Connection:Disconnect()"
+        }
+      ]
+    }
+  ],
+  "datatypes": [
+    {
+      "name": "Vector3",
+      "members": [
+        {
+          "name": "new",
+          "kind": "constructor",
+          "signature": "Vector3.new(x: number?, y: number?, z: number?): Vector3"
+        },
+        {
+          "name": "zero",
+          "kind": "constant",
+          "type": "Vector3"
+        },
+        {
+          "name": "one",
+          "kind": "constant",
+          "type": "Vector3"
+        },
+        {
+          "name": "xAxis",
+          "kind": "constant",
+          "type": "Vector3"
+        },
+        {
+          "name": "yAxis",
+          "kind": "constant",
+          "type": "Vector3"
+        },
+        {
+          "name": "zAxis",
+          "kind": "constant",
+          "type": "Vector3"
+        },
+        {
+          "name": "X",
+          "kind": "property",
+          "type": "number",
+          "unverified": true
+        },
+        {
+          "name": "Y",
+          "kind": "property",
+          "type": "number",
+          "unverified": true
+        },
+        {
+          "name": "Z",
+          "kind": "property",
+          "type": "number",
+          "unverified": true
+        },
+        {
+          "name": "Magnitude",
+          "kind": "property",
+          "type": "number"
+        },
+        {
+          "name": "Unit",
+          "kind": "property",
+          "type": "Vector3"
+        },
+        {
+          "name": "Dot",
+          "kind": "method",
+          "signature": "Vector3:Dot(other: Vector3): number"
+        },
+        {
+          "name": "Cross",
+          "kind": "method",
+          "signature": "Vector3:Cross(other: Vector3): Vector3"
+        },
+        {
+          "name": "Lerp",
+          "kind": "method",
+          "signature": "Vector3:Lerp(goal: Vector3, alpha: number): Vector3"
+        }
+      ],
+      "description": "Supports + - * / and unary minus."
+    },
+    {
+      "name": "CFrame",
+      "members": [
+        {
+          "name": "new",
+          "kind": "constructor",
+          "signature": "CFrame.new(x: number?, y: number?, z: number?) or CFrame.new(pos: Vector3, lookAt: Vector3?)"
+        },
+        {
+          "name": "Angles",
+          "kind": "constructor",
+          "signature": "CFrame.Angles(rx: number, ry: number, rz: number): CFrame",
+          "description": "Radians."
+        },
+        {
+          "name": "fromEulerAnglesXYZ",
+          "kind": "constructor",
+          "signature": "CFrame.fromEulerAnglesXYZ(rx: number, ry: number, rz: number): CFrame"
+        },
+        {
+          "name": "fromEulerAnglesYXZ",
+          "kind": "constructor",
+          "signature": "CFrame.fromEulerAnglesYXZ(rx: number, ry: number, rz: number): CFrame"
+        },
+        {
+          "name": "fromOrientation",
+          "kind": "constructor",
+          "signature": "CFrame.fromOrientation(rx: number, ry: number, rz: number): CFrame"
+        },
+        {
+          "name": "fromAxisAngle",
+          "kind": "constructor",
+          "signature": "CFrame.fromAxisAngle(axis: Vector3, angle: number): CFrame"
+        },
+        {
+          "name": "fromMatrix",
+          "kind": "constructor",
+          "signature": "CFrame.fromMatrix(pos: Vector3, vx: Vector3, vy: Vector3, vz: Vector3?): CFrame"
+        },
+        {
+          "name": "lookAt",
+          "kind": "constructor",
+          "signature": "CFrame.lookAt(at: Vector3, target: Vector3, up: Vector3?): CFrame"
+        },
+        {
+          "name": "identity",
+          "kind": "constant",
+          "type": "CFrame"
+        },
+        {
+          "name": "Position",
+          "kind": "property",
+          "type": "Vector3"
+        },
+        {
+          "name": "Rotation",
+          "kind": "property",
+          "type": "CFrame"
+        },
+        {
+          "name": "LookVector",
+          "kind": "property",
+          "type": "Vector3"
+        },
+        {
+          "name": "RightVector",
+          "kind": "property",
+          "type": "Vector3"
+        },
+        {
+          "name": "UpVector",
+          "kind": "property",
+          "type": "Vector3"
+        },
+        {
+          "name": "XVector",
+          "kind": "property",
+          "type": "Vector3"
+        },
+        {
+          "name": "YVector",
+          "kind": "property",
+          "type": "Vector3"
+        },
+        {
+          "name": "ZVector",
+          "kind": "property",
+          "type": "Vector3"
+        },
+        {
+          "name": "Inverse",
+          "kind": "method",
+          "signature": "CFrame:Inverse(): CFrame"
+        },
+        {
+          "name": "Lerp",
+          "kind": "method",
+          "signature": "CFrame:Lerp(goal: CFrame, alpha: number): CFrame"
+        },
+        {
+          "name": "ToWorldSpace",
+          "kind": "method",
+          "signature": "CFrame:ToWorldSpace(cf: CFrame): CFrame"
+        },
+        {
+          "name": "ToObjectSpace",
+          "kind": "method",
+          "signature": "CFrame:ToObjectSpace(cf: CFrame): CFrame"
+        },
+        {
+          "name": "PointToWorldSpace",
+          "kind": "method",
+          "signature": "CFrame:PointToWorldSpace(v: Vector3): Vector3"
+        },
+        {
+          "name": "PointToObjectSpace",
+          "kind": "method",
+          "signature": "CFrame:PointToObjectSpace(v: Vector3): Vector3"
+        },
+        {
+          "name": "VectorToWorldSpace",
+          "kind": "method",
+          "signature": "CFrame:VectorToWorldSpace(v: Vector3): Vector3"
+        },
+        {
+          "name": "VectorToObjectSpace",
+          "kind": "method",
+          "signature": "CFrame:VectorToObjectSpace(v: Vector3): Vector3"
+        },
+        {
+          "name": "GetComponents",
+          "kind": "method",
+          "signature": "CFrame:GetComponents(): (number, ...)"
+        },
+        {
+          "name": "ToEulerAnglesXYZ",
+          "kind": "method",
+          "signature": "CFrame:ToEulerAnglesXYZ(): (number, number, number)"
+        },
+        {
+          "name": "ToEulerAnglesYXZ",
+          "kind": "method",
+          "signature": "CFrame:ToEulerAnglesYXZ(): (number, number, number)"
+        },
+        {
+          "name": "ToOrientation",
+          "kind": "method",
+          "signature": "CFrame:ToOrientation(): (number, number, number)"
+        }
+      ],
+      "description": "Position plus rotation. CFrame * CFrame composes, CFrame * Vector3 transforms a point, CFrame + Vector3 moves."
+    },
+    {
+      "name": "Color3",
+      "members": [
+        {
+          "name": "new",
+          "kind": "constructor",
+          "signature": "Color3.new(r: number, g: number, b: number): Color3",
+          "description": "Components from 0 to 1."
+        },
+        {
+          "name": "fromRGB",
+          "kind": "constructor",
+          "signature": "Color3.fromRGB(r: number, g: number, b: number): Color3",
+          "description": "Components from 0 to 255."
+        },
+        {
+          "name": "R",
+          "kind": "property",
+          "type": "number",
+          "unverified": true
+        },
+        {
+          "name": "G",
+          "kind": "property",
+          "type": "number",
+          "unverified": true
+        },
+        {
+          "name": "B",
+          "kind": "property",
+          "type": "number",
+          "unverified": true
+        }
+      ]
+    },
+    {
+      "name": "TweenInfo",
+      "members": [
+        {
+          "name": "new",
+          "kind": "constructor",
+          "signature": "TweenInfo.new(time: number?, easingStyle: Enum.EasingStyle?, easingDirection: Enum.EasingDirection?, repeatCount: number?, reverses: boolean?, delayTime: number?): TweenInfo"
+        }
+      ]
+    },
+    {
+      "name": "RaycastParams",
+      "members": [
+        {
+          "name": "new",
+          "kind": "constructor",
+          "signature": "RaycastParams.new(): RaycastParams"
+        },
+        {
+          "name": "FilterType",
+          "kind": "property",
+          "type": "Enum.RaycastFilterType"
+        },
+        {
+          "name": "FilterDescendantsInstances",
+          "kind": "property",
+          "type": "{Instance}"
+        }
+      ],
+      "unverified": true
+    },
+    {
+      "name": "Instance",
+      "members": [
+        {
+          "name": "new",
+          "kind": "constructor",
+          "signature": "Instance.new(className: string, parent: Instance?): Instance",
+          "description": "See the creatable classes."
+        }
+      ]
+    },
+    {
+      "name": "EnumItem",
+      "members": [
+        {
+          "name": "Name",
+          "kind": "property",
+          "type": "string"
+        },
+        {
+          "name": "Value",
+          "kind": "property",
+          "type": "number"
+        },
+        {
+          "name": "EnumType",
+          "kind": "property",
+          "type": "Enum"
+        }
+      ],
+      "description": "Enum tables also offer GetEnumItems(), FromName(name) and FromValue(value)."
+    }
+  ],
+  "enums": {
+    "Material": [
+      "SmoothPlastic",
+      "Plastic",
+      "Wood",
+      "Metal",
+      "Grass",
+      "Ice",
+      "Paint"
+    ],
+    "NormalId": [
+      "Front",
+      "Back",
+      "Top",
+      "Bottom",
+      "Left",
+      "Right"
+    ],
+    "PartType": [
+      "Block",
+      "Wedge",
+      "CornerWedge",
+      "Cylinder",
+      "Ball"
+    ],
+    "SurfaceType": [
+      "Studs",
+      "Inlets"
+    ],
+    "KeyCode": [
+      "Unknown",
+      "Backspace",
+      "Tab",
+      "Return",
+      "Escape",
+      "Space",
+      "Quote",
+      "Comma",
+      "Minus",
+      "Period",
+      "Slash",
+      "Zero",
+      "One",
+      "Two",
+      "Three",
+      "Four",
+      "Five",
+      "Six",
+      "Seven",
+      "Eight",
+      "Nine",
+      "Semicolon",
+      "Equals",
+      "LeftBracket",
+      "BackSlash",
+      "RightBracket",
+      "Backquote",
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U",
+      "V",
+      "W",
+      "X",
+      "Y",
+      "Z",
+      "Delete",
+      "Up",
+      "Down",
+      "Left",
+      "Right",
+      "LeftShift",
+      "RightShift",
+      "LeftControl",
+      "RightControl",
+      "LeftAlt",
+      "RightAlt",
+      "LeftSuper",
+      "RightSuper",
+      "F1",
+      "F2",
+      "F3",
+      "F4",
+      "F5",
+      "F6",
+      "F7",
+      "F8",
+      "F9",
+      "F10",
+      "F11",
+      "F12"
+    ],
+    "HumanoidStateType": [
+      "FallingDown",
+      "Ragdoll",
+      "GettingUp",
+      "Jumping",
+      "Swimming",
+      "Freefall",
+      "Flying",
+      "Landed",
+      "Running",
+      "RunningNoPhysics",
+      "StrafingNoPhysics",
+      "Climbing",
+      "Seated",
+      "PlatformStanding",
+      "Dead",
+      "Physics",
+      "None"
+    ],
+    "UserInputType": [
+      "MouseButton1",
+      "MouseButton2",
+      "MouseButton3",
+      "MouseWheel",
+      "MouseMovement",
+      "Touch",
+      "Keyboard",
+      "Focus",
+      "Gamepad1"
+    ],
+    "EasingStyle": [
+      "Linear",
+      "Sine",
+      "Quad",
+      "Quart",
+      "Quint",
+      "Bounce",
+      "Elastic",
+      "Exponential",
+      "Circular",
+      "Cubic"
+    ],
+    "EasingDirection": [
+      "In",
+      "Out",
+      "InOut"
+    ],
+    "PlaybackState": [
+      "Begin",
+      "Delayed",
+      "Playing",
+      "Paused",
+      "Completed",
+      "Cancelled"
+    ],
+    "RaycastFilterType": [
+      "Include",
+      "Exclude"
+    ]
+  },
+  "limits": [
+    "At most 256 scripts run at once, extra scripts don't start.",
+    "Scripts have a per frame time budget. Server scripts that go over get their work dropped, so avoid long loops without task.wait().",
+    "Each script has a Lua heap limit.",
+    "Signals have a connection limit per signal, disconnect what you no longer need.",
+    "RemoteEvent and RemoteFunction arguments can't contain Instances or CFrames yet. Send names, ids or Vector3 positions instead.",
+    "SetAttribute only takes nil, boolean, number or string from scripts.",
+    "Published games must stay under 100 MB."
+  ],
+  "enums_unverified": {
+    "RaycastFilterType": [
+      "Exclude"
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+name: Sample .vrtx file
+description: Share a project that uses classes or features the tools don't support yet
+labels: [format]
+body:
+  - type: textarea
+    id: contents
+    attributes:
+      label: What's in it
+      description: Which classes and properties you used, with the values you set in Studio. Exact values help a lot.
+      placeholder: A PointLight on a part with Brightness 3 and Range 20, an IntValue with Value 42 ...
+    validations:
+      required: true
+  - type: textarea
+    id: file
+    attributes:
+      label: File
+      description: Attach the .vrtx (zip it if GitHub refuses the extension). By attaching it you agree it may be added to the test fixtures under the MIT license.
+    validations:
+      required: true

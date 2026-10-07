@@ -1,0 +1,28 @@
+[package]
+name = "vortexstudio-mcp"
+version = "1.0.0"
+edition = "2024"
+rust-version = "1.89"
+description = "MCP server for Vortex Studio: read and edit .vrtx projects, Vortex Luau API reference and linter"
+license = "MIT"
+repository = "https://github.com/xRookieFight/VortexStudio-MCP"
+readme = "README.md"
+keywords = ["mcp", "vortex", "luau", "gamedev", "ai"]
+categories = ["development-tools", "game-development"]
+
+[profile.release]
+strip = true
+lto = true
+
+[dependencies]
+anyhow = "1.0.104"
+full_moon = { version = "3.0.0", default-features = false, features = ["luau", "serde"] }
+rmcp = { version = "3.5.1", features = ["server", "transport-io", "macros"] }
+schemars = "1.2.2"
+serde = { version = "1.0.229", features = ["derive"] }
+serde_json = "1.0.151"
+tokio = { version = "1.53.2", features = ["macros", "rt-multi-thread", "io-std"] }
+zstd = "0.14.0"
+
+[dev-dependencies]
+tempfile = "3.27.0"

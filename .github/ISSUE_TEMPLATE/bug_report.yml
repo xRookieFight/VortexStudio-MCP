@@ -1,0 +1,31 @@
+name: Bug report
+description: A tool failed or did the wrong thing
+labels: [bug]
+body:
+  - type: input
+    id: tool
+    attributes:
+      label: Tool
+      placeholder: set_properties
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: Arguments passed, what you expected and what you got, including the full error text.
+    validations:
+      required: true
+  - type: input
+    id: versions
+    attributes:
+      label: Versions
+      description: vortexstudio-mcp --version, Vortex Studio version and your OS.
+      placeholder: vortexstudio-mcp 1.0.0, Studio 0.6.1, Windows 11
+    validations:
+      required: true
+  - type: textarea
+    id: file
+    attributes:
+      label: Project file
+      description: If a project fails to load, attach the .vrtx (zip it if GitHub refuses the extension) or describe what it contains.
